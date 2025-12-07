@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  shares-frontend:
+    image: kennydew/shares-frontend:1.0.3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shares-frontend
+    ports:
+      - "3000:80"   # пробрасываем порт 80 контейнера на 3000 хоста
+    restart: unless-stopped
